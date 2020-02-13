@@ -16,10 +16,11 @@ namespace WebApplication1.Controllers
     {
         private Totp _totpManager;
         private DafaqModel dafaq;
+        private byte[] secret = { 100, 200, 32 };
 
         public TotpController()
         {
-            _totpManager = new Totp(KeyGeneration.GenerateRandomKey());
+            _totpManager = new Totp(secret);
 
             dafaq = new DafaqModel();
         }
